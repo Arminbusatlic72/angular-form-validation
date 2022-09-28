@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'form-validations';
+  searchText: String = '';
+  loginUser(value:String) {console.log(value)}
+  onSearchTextEntered(searchValue: String) {
+    this.searchText = searchValue;
+    console.log(this.searchText)
+
+  }
 }
