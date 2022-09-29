@@ -1,58 +1,45 @@
 <div class="container">
-  <h1>{{ title }}</h1>
-  <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
-  <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
-    <input
-      type="text"
-      required
-      #name="ngModel"
-      name="name"
-      placeholder="Type your name"
-      ngModel
-    />
-    <br />
-    <span *ngIf="name.invalid && name.touched" style="color: red"
-      >Please enter valid input</span
-    >
-    <br />
-
-    <input
-      type="password"
-      required
-      minlength="5"
-      pattern="[a-z A-Z]+$"
-      #password="ngModel"
-      name="password"
-      ngModel
-      placeholder="add your password"
-    />
-    <br />
-    <span *ngIf="password.invalid && password.touched" style="color: red"
-      >Please enter valid password</span
-    >
-    <br />
-    <input
-      type="email"
-      name="email"
-      #email="ngModel"
-      required
-      placeholder="enter your email"
-      email
-      ngModel
-    />
-    <br />
-    <span *ngIf="email.invalid && email.touched" style="color: red"
-      >Please enter valid email</span
-    >
-
-    <br />
-
-    <button [disabled]="loginForm.invalid">Login</button>
-  </form>
-  <button type="submit" (click)="loginUser(loginForm.value)">
-    Login outside form
-  </button>
-  <br />
-  <br />
-  <app-login></app-login>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div id="user-data">
+          <div class="form-group">
+            <label for="username">User Name</label>
+            <input
+              type="text"
+              id="username"
+              class="form-control"
+              ngModel
+              name="username"
+            />
+          </div>
+          <button class="btn btn-default">Suggest an User Name</button>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              ngModel
+              name="email"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="secret">Secret Questions</label>
+          <select
+            name="secret"
+            id="secret"
+            class="form-control"
+            ngModel
+            name="select"
+          >
+            <option value="pet">Name of your pet</option>
+            <option value="teacher">Your first teacher</option>
+          </select>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
 </div>
