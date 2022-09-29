@@ -14,3 +14,6 @@ form {
   padding-block: 20px;
 
 } */
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
