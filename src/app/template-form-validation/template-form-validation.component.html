@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-2 col-md-offset-2">
+      <h2>{{ name }}</h2>
       <form (ngSubmit)="onSubmit()" #formReference="ngForm">
         <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
           <div class="form-group">
@@ -84,11 +85,53 @@
   </div>
   <hr />
   <div class="row" *ngIf="submit">
-    <div class="col-xs-12">
+    <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-2 col-md-offset-2">
       <h2>Your data</h2>
       <p>My user name is :{{ user.username }}</p>
       <p>My email is : {{ user.email }}</p>
       <p>My gender is : {{ user.gender }}</p>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-2 col-md-offset-2">
+      <form (ngSubmit)="onSubmitSecond()" #formReference2="ngForm">
+        <div class="form-group">
+          <label for="username">Enter your name</label
+          ><input ngModel type="text" name="username" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="email">Enter your email</label
+          ><input
+            ngModel
+            type="email"
+            name="email"
+            class="form-control"
+            required
+            email
+          />
+        </div>
+        <div class="form-group">
+          <label for="select">Select Option</label
+          ><select type="select" ngModel name="select" class="form-control">
+            <option value="option 1">Select option one</option>
+            <option value="option 2">Select option two</option>
+            <option value="option 3">Select option tree</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="password">Enter your password</label
+          ><input
+            type="password"
+            name="password"
+            ngModel
+            class="form-control"
+            autocomplete="on"
+          />
+        </div>
+
+        <button>Submit</button>
+      </form>
     </div>
   </div>
 </div>

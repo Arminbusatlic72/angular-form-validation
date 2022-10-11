@@ -7,6 +7,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./template-form-validation.component.css']
 })
 export class TemplateFormValidationComponent implements OnInit {
+  name: string = "Template driven form validation"
   searchText: String = '';
   defaultQuestion: string = 'pet';
   answer: string = '';
@@ -19,6 +20,7 @@ export class TemplateFormValidationComponent implements OnInit {
   submit: boolean = false
   @ViewChild('formReference') signupForm!:NgForm;
   @ViewChild('userData') userData!:string
+  @ViewChild('formReference2') signupFormSecond!: NgForm;
 
   constructor() { }
 
@@ -45,12 +47,15 @@ export class TemplateFormValidationComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submit = true
+  this.submit = true
   this.user.username = this.signupForm.value.userData.username
   this.user.email = this.signupForm.value.userData.email
   this.user.gender = this.signupForm.value.radio
   this.signupForm.reset()
   console.log(this.user)
+  }
+  onSubmitSecond() {
+    console.log(this.signupFormSecond.value)
   }
 
 }
