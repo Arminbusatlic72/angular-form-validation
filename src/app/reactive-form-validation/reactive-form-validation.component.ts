@@ -21,5 +21,8 @@ export class ReactiveFormValidationComponent implements OnInit {
 
     });
   }
+  onSubmit() {
+    console.log(this.signupForm)
+  }
 
 }

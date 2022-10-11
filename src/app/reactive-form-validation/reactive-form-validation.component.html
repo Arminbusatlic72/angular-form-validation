@@ -6,34 +6,34 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-2 col-md-offset-2">
-      <form [formGroup]="signupForm">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="username">Username :</label
           ><input
             type="text"
             name="username"
-            id="username"
+            id="usernameR"
             formControlName="username"
             class="form-control"
           />
         </div>
 
         <div class="form-group">
-          <label for="email">Email :</label
+          <label for="emailR">Email :</label
           ><input
             type="email"
             name="email"
-            id="email"
+            id="emailR"
             formControlName="email"
             class="form-control"
           />
         </div>
-        <div class="radio" *ngFor="let gender of genders">
+        <div class="radio" *ngFor="let gender of genders; let i = index">
           <label for="radio">
             <input
               type="radio"
               [value]="gender"
-              id="radio"
+              id="{{ 'radio' + i }}"
               formControlName="gender"
             />{{ gender }}
           </label>

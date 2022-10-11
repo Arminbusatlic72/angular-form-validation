@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="navbar-brand"
+        >Angular Form Validation</a
+      >
+    </div>
+    <div class="colapse navbar-colapse">
+      <ul class="nav navbar-nav mr-auto row">
+        <li routerLinkActive="active" class="nav-item">
+          <a class="nav-link" routerLink="/reactive-form-validation"
+            >Reactive form validation</a
+          >
+        </li>
+        <li routerLinkActive="active" class="nav-item ml-5">
+          <a class="nav-link" routerLink="/template-driven-form-validation"
+            >Template driven form validation</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

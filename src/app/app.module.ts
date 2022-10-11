@@ -6,7 +6,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SearchComponent } from './search/search.component';
 import { TemplateFormValidationComponent } from './template-form-validation/template-form-validation.component';
-import { ReactiveFormValidationComponent } from './reactive-form-validation/reactive-form-validation.component'
+import { ReactiveFormValidationComponent } from './reactive-form-validation/reactive-form-validation.component';
+import { HeaderComponent } from './header/header.component'
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -15,10 +17,11 @@ import { ReactiveFormValidationComponent } from './reactive-form-validation/reac
     LoginComponent,
     SearchComponent,
     TemplateFormValidationComponent,
-    ReactiveFormValidationComponent
+    ReactiveFormValidationComponent,
+    HeaderComponent
   ],
   imports: [
-    BrowserModule, FormsModule, ReactiveFormsModule
+    BrowserModule, FormsModule, ReactiveFormsModule, AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
